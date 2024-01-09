@@ -7,7 +7,7 @@ const server = http.createServer(app);
 const io = require('socket.io')(server);
 const pedidosSocket = require('./sockets/pedidos_socket');
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // sin esto no podemos ver el req.body
 app.use(express.urlencoded({ extended: true })); // sino se agrega no podremos tomar los parametros de la url del request, req.query
