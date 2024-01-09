@@ -23,7 +23,7 @@ app.set('port', port);
 //LLAMAR A LOS SOCKETS
 pedidosSocket(io);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`API RUNNING ON PORT ${PORT}`);
 });
 
