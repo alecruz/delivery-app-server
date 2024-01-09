@@ -17,6 +17,9 @@ app.get(`/`, (req, res) => {
   return res.json({ message: `API DEPLOY SUCCESS` });
 });
 
+app.disable('x-powered-by');
+app.set('port', PORT);
+
 //LLAMAR A LOS SOCKETS
 pedidosSocket(io);
 
