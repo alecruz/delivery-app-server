@@ -18,7 +18,7 @@ app.use(cors());
 
 app.disable('x-powered-by');
 
-app.set('port', port);
+app.set('port', PORT);
 
 //LLAMAR A LOS SOCKETS
 pedidosSocket(io);
