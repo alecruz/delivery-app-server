@@ -1,4 +1,4 @@
-/*const express = require('express');
+const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
@@ -7,7 +7,7 @@ const cors = require('cors');
 const io = require('socket.io')(server);
 const pedidosSocket = require('./sockets/pedidos_socket');
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -23,9 +23,13 @@ app.set('port', port);
 //LLAMAR A LOS SOCKETS
 pedidosSocket(io);
 
-server.listen(3000, '192.168.1.18' || 'localhost', function (){
-    console.log('Aplicacion de NodeJS ' + process.pid + ' Iniciada...')
+app.listen(PORT, () => {
+  console.log(`API RUNNING ON PORT ${PORT}`);
 });
+
+/*server.listen(3000, '192.168.1.18' || 'localhost', function (){
+    console.log('Aplicacion de NodeJS ' + process.pid + ' Iniciada...')
+});*/
 
 app.get('/', (req, res) => {
     res.send('Ruta raiz del backend');
