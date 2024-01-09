@@ -28,6 +28,17 @@ app.listen(PORT, () => {
   console.log(`API RUNNING ON PORT ${PORT}`);
 });
 
+//ERROR HANDLER
+app.use((err, req, res, next) => {
+    console.log(err);
+    res.status(err.status || 500).send(err.stack);
+});
+
+module.exports = {
+    app: app,
+    server: server
+}
+
 
 /*server.listen(3000, '192.168.1.18' || 'localhost', function (){
     console.log('Aplicacion de NodeJS ' + process.pid + ' Iniciada...')
