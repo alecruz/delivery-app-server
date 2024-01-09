@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const app = express();
 const http = require('http');
 const server = http.createServer(app);
@@ -40,4 +40,4 @@ app.use((err, req, res, next) => {
 module.exports = {
     app: app,
     server: server
-}
+}*/
